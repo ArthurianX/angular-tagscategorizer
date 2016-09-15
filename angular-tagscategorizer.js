@@ -226,7 +226,10 @@ angular.module('tagsCategorizer')
                         $scope.tagsGroups.forEach(function(val){
                             val.open = false;
                         });
-                        $scope.tagsGroups[index].open = true;
+
+                        if ($scope.tagsGroups[index]) {
+                            $scope.tagsGroups[index].open = true;
+                        }
                     };
 
                     $scope.removeAssignedTag = function(group, index) {
